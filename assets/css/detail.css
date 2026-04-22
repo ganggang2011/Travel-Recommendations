@@ -176,6 +176,9 @@
   font-size: 12px;
   color: var(--c-ink-mute);
   letter-spacing: 0.04em;
+  max-width: 100%;
+  line-height: 1.45;
+  overflow-wrap: anywhere;
 }
 .live-cell.flag {
   flex-direction: row;
@@ -191,21 +194,43 @@
 
 /* weather chart mini */
 .wx-days {
-  display: flex;
-  gap: 6px;
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 4px;
   margin-top: 8px;
+  min-width: 0;
+  width: 100%;
 }
 .wx-day {
-  flex: 1;
   min-width: 0;
   text-align: center;
-  padding: 8px 4px;
+  padding: 6px 2px;
   background: var(--c-bg-soft);
   border-radius: 4px;
 }
-.wx-day .d { font-size: 10px; color: var(--c-ink-mute); letter-spacing: 0.06em; }
-.wx-day .t { font-family: var(--font-display); font-size: 15px; font-weight: 400; color: var(--c-ink); }
-.wx-day .ic { font-size: 14px; margin: 2px 0; }
+.wx-day .d {
+  font-size: 9px;
+  color: var(--c-ink-mute);
+  letter-spacing: 0.04em;
+  line-height: 1.2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.wx-day .t {
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 1.15;
+  color: var(--c-ink);
+  font-variant-numeric: tabular-nums;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1px;
+}
+.wx-day .t .lo { font-size: 10px; color: var(--c-ink-mute); font-family: var(--font-body); }
+.wx-day .ic { font-size: 12px; line-height: 1; margin: 2px 0 3px; }
 
 /* -------- detail body -------- */
 .detail-body {

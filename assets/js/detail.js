@@ -193,7 +193,7 @@
           const tmax = Math.round(data.daily.temperature_2m_max[i]);
           const tmin = Math.round(data.daily.temperature_2m_min[i]);
           const day = window.YY_Live.shortDay(iso, d.timezone);
-          return `<div class="wx-day"><div class="d">${day}</div><div class="ic">${s.i}</div><div class="t">${tmax}°/${tmin}°</div></div>`;
+          return `<div class="wx-day"><div class="d">${day}</div><div class="ic">${s.i}</div><div class="t"><span>${tmax}°</span><span class="lo">${tmin}°</span></div></div>`;
         }).join("");
         wxDays.innerHTML = rows;
       }
