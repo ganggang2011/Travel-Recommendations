@@ -65,13 +65,15 @@
 .detail-hero-eyebrow::before { content: ""; width: 28px; height: 1px; background: #fff; }
 .detail-hero h1 {
   font-family: var(--font-display);
-  font-weight: 300;
+  font-weight: 400;
   font-size: clamp(52px, 9vw, 128px);
   line-height: 0.92;
   letter-spacing: -0.035em;
   margin: 0 0 16px;
   font-variation-settings: "SOFT" 40, "WONK" 0;
   animation: fadeUp 1s var(--ease-out) 0.35s both;
+  text-shadow: 0 2px 30px rgba(0, 0, 0, 0.3);
+  color: #fff;
 }
 .detail-hero .tagline {
   font-size: 18px;
