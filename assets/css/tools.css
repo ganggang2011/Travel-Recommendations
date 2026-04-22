@@ -191,6 +191,12 @@
   gap: 24px;
   row-gap: 56px;
 }
+.wish-grid .ed-card,
+.wish-grid .ed-card.is-feature,
+.wish-grid .ed-card.is-tall {
+  grid-column: auto;
+  grid-row: auto;
+}
 
 @media (max-width: 980px) {
   .tool-head { grid-template-columns: 1fr; gap: 24px; }

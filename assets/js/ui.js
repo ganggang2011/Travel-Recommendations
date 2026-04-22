@@ -232,4 +232,18 @@ window.YY_renderChrome = function renderChrome(activePage) {
   const footHost = document.querySelector("[data-chrome='footer']");
   if (headHost) headHost.outerHTML = header;
   if (footHost) footHost.outerHTML = footer;
+
+  // 渲染完 chrome 后同步徽章、币种选择、主题切换
+  if (window.YY_Wishlist) {
+    const n = window.YY_Wishlist.list().length;
+    document.querySelectorAll("[data-wishlist-count]").forEach(el => {
+      el.textContent = n; el.classList.toggle("is-on", n > 0);
+    });
+  }
+  if (window.YY_Plan) {
+    const n = window.YY_Plan.list().length;
+    document.querySelectorAll("[data-plan-count]").forEach(el => {
+      el.textContent = n; el.classList.toggle("is-on", n > 0);
+    });
+  }
 };

@@ -222,9 +222,11 @@
 })();
 
 // -------- header tools (theme toggle + currency select + badges) --------
-document.addEventListener("DOMContentLoaded", () => {
-  const themeBtn = document.querySelector("[data-theme-toggle]");
-  if (themeBtn) {
+// 通过 MutationObserver 等待 renderChrome 插入的元素
+function bindHeaderTools(root) {
+  const themeBtn = root.querySelector("[data-theme-toggle]");
+  if (themeBtn && !themeBtn._bound) {
+    themeBtn._bound = true;
     const sync = () => {
       themeBtn.innerHTML = window.YY_Theme.current() === "dark" ? "☀" : "☾";
       themeBtn.setAttribute("aria-label", window.YY_Theme.current() === "dark" ? "切换浅色" : "切换深色");
@@ -232,12 +234,20 @@ document.addEventListener("DOMContentLoaded", () => {
     sync();
     themeBtn.addEventListener("click", () => { window.YY_Theme.toggle(); sync(); });
   }
-  const curSel = document.querySelector("[data-currency-select]");
-  if (curSel) {
+  const curSel = root.querySelector("[data-currency-select]");
+  if (curSel && !curSel._bound) {
+    curSel._bound = true;
     curSel.value = window.YY_Currency.current();
     curSel.addEventListener("change", (e) => {
       window.YY_Currency.set(e.target.value);
       window.YY_Toast(`货币已切换到 ${e.target.value}`);
     });
   }
+}
+document.addEventListener("DOMContentLoaded", () => {
+  bindHeaderTools(document);
+  const mo = new MutationObserver(() => bindHeaderTools(document));
+  mo.observe(document.body, { childList: true, subtree: true });
+  // 保险起见 2s 后停止观察
+  setTimeout(() => mo.disconnect(), 2000);
 });

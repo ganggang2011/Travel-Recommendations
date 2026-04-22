@@ -142,7 +142,9 @@
   row-gap: 64px;
   padding: 32px 0 120px;
 }
-.dest-grid .ed-card { grid-column: auto; animation: cardIn 0.7s var(--ease-out) both; }
+.dest-grid .ed-card,
+.dest-grid .ed-card.is-feature,
+.dest-grid .ed-card.is-tall { grid-column: auto; grid-row: auto; animation: cardIn 0.7s var(--ease-out) both; }
 @keyframes cardIn {
   from { opacity: 0; transform: translateY(24px); }
   to   { opacity: 1; transform: translateY(0); }
