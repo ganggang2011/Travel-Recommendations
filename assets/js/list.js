@@ -58,21 +58,21 @@
       if (state.region) parts.push(state.region);
       if (state.theme) parts.push(state.theme);
       if (state.q) parts.push(`“${state.q}”`);
-      meta.innerHTML = `共找到 <strong>${items.length}</strong> 个目的地${parts.length ? " · " + parts.join(" / ") : ""}`;
+      meta.innerHTML = `共 <strong>${items.length}</strong> 个目的地${parts.length ? " · " + parts.join(" · ") : ""}`;
     }
     if (!grid) return;
     if (!items.length) {
       grid.innerHTML = `
-        <div class="empty-state" style="grid-column:1/-1">
-          <div class="emoji">🧭</div>
-          <h3 style="margin:0 0 6px">暂无符合条件的目的地</h3>
-          <p>试试调整筛选条件，或<a href="destinations.html" style="color:var(--c-primary);font-weight:600">查看全部</a></p>
+        <div class="empty-state">
+          <h3>这里暂时空空如也</h3>
+          <p>调整筛选条件，或 <a href="destinations.html">查看全部目的地</a></p>
         </div>
       `;
       return;
     }
-    grid.innerHTML = items.map((d, i) => window.renderDestinationCard(d, i)).join("");
+    grid.innerHTML = items.map((d, i) => window.renderEditorialCard(d, i, "plain")).join("");
     if (window.observeReveal) window.observeReveal(grid);
+    if (window.YY_Currency) window.YY_Currency.applyAll();
   }
 
   function initControls() {
@@ -119,8 +119,10 @@
   }
 
   document.addEventListener("DOMContentLoaded", () => {
+    window.YY_renderChrome("dest");
     readQuery();
     initControls();
     render();
+    if (window.YY_Currency) window.YY_Currency.onChange(() => window.YY_Currency.applyAll());
   });
 })();

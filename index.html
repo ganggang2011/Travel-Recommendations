@@ -3,230 +3,202 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>云游 · 发现下一段值得出发的旅程</title>
-  <meta name="description" content="云游是一个精选目的地旅游推荐平台：用沉浸式的图文、动态的路线与真实的旅人评价，为你挑一段下一次的出发。" />
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='74' font-size='80'%3E%E2%9C%88%EF%B8%8F%3C/text%3E%3C/svg%3E" />
+  <title>云游 · 为每一次出发，留一首诗</title>
+  <meta name="description" content="云游是一个精选目的地旅游推荐平台：用杂志式的编辑视角、真实的旅人记录与实时的目的地数据，为你挑一段下一次的出发。" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='74' font-size='80' font-family='serif' font-style='italic' fill='%23b6532b'%3EY%3C/text%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..500,30..100,0..1;1,9..144,300..500,30..100,0..1&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/main.css" />
   <link rel="stylesheet" href="assets/css/home.css" />
 </head>
 <body>
-  <!-- -------- 顶部导航 -------- -->
-  <header class="site-header is-transparent" data-header-mode="auto">
-    <div class="container">
-      <a class="brand" href="index.html">
-        <span class="brand-mark">✈</span>
-        <span>云游</span>
-      </a>
-      <nav class="nav">
-        <a href="index.html" class="is-active">首页</a>
-        <a href="destinations.html">目的地</a>
-        <a href="#themes">主题</a>
-        <a href="#stories">故事</a>
-        <a href="#newsletter">订阅</a>
-      </nav>
-      <a href="destinations.html" class="btn btn--primary header-cta">开始规划</a>
-      <button class="nav-toggle" aria-label="菜单"><span></span></button>
-    </div>
-  </header>
+  <div data-chrome="header"></div>
 
   <!-- -------- Hero -------- -->
   <section class="hero">
     <div class="hero-bg-wrap"></div>
+    <div class="hero-grain"></div>
 
     <div class="container hero-content">
-      <span class="hero-badge">
-        <span class="dot"></span> 已有 120,000+ 旅行者在云游规划路线
-      </span>
-      <h1>
-        <span class="hero-word-anim" data-hero-title>下一段出发，</span>
-        <br />
-        <span class="accent">由你定义。</span>
+      <div class="hero-meta">
+        <span class="hero-eyebrow">ISSUE № 04 · SPRING 2026</span>
+        <span class="hero-slide-indicator">
+          CURRENT <span class="track"><span></span></span> LIVING ROOM OF THE WORLD
+        </span>
+      </div>
+
+      <h1 data-hero-title>
+        <span class="line"><span>为每一次出发，</span></span>
+        <span class="line"><span>留一首 <em>诗</em>。</span></span>
       </h1>
-      <p class="lead">从京都的樱花小径到冰岛的极光之夜，云游用精心挑选的目的地、沉浸式的灵感与真诚的本地建议，陪你把"想去"变成"正在去"。</p>
-      <div class="hero-actions">
-        <a href="destinations.html" class="btn btn--primary">浏览目的地 →</a>
-        <a href="#featured" class="btn btn--ghost">看看灵感</a>
-      </div>
 
-      <form class="hero-search" data-hero-search>
-        <div class="field">
-          <label>去哪里</label>
-          <input type="text" name="q" placeholder="城市、国家或关键词" />
+      <div class="hero-bottom">
+        <p class="lead">从京都的哲学之道到冰岛的黑沙滩，我们不做便宜的攻略。我们用编辑的眼光，为你挑选下一次值得动身的地方。</p>
+        <div class="hero-actions">
+          <a href="destinations.html" class="btn btn--primary">浏览目的地 <span class="arrow">→</span></a>
+          <a href="#intro" class="btn btn--ghost">往下读</a>
         </div>
-        <div class="field">
-          <label>区域</label>
-          <select name="region">
-            <option value="">不限</option>
-            <option>东亚</option>
-            <option>东南亚</option>
-            <option>欧洲</option>
-            <option>北美</option>
-            <option>非洲</option>
-            <option>大洋洲</option>
-          </select>
-        </div>
-        <div class="field">
-          <label>主题</label>
-          <select name="theme">
-            <option value="">任意</option>
-            <option>文化</option>
-            <option>海岛</option>
-            <option>自然</option>
-            <option>美食</option>
-            <option>探险</option>
-            <option>浪漫</option>
-          </select>
-        </div>
-        <button class="btn btn--primary" type="submit">搜索</button>
-      </form>
+      </div>
     </div>
 
-    <div class="hero-scroll">scroll</div>
-    <div class="hero-shade"></div>
+    <form class="hero-search" data-hero-search>
+      <div class="field">
+        <label>去哪里</label>
+        <input type="text" name="q" placeholder="城市、国家或关键词" />
+      </div>
+      <div class="field">
+        <label>区域</label>
+        <select name="region">
+          <option value="">不限</option>
+          <option>东亚</option><option>东南亚</option><option>欧洲</option>
+          <option>北美</option><option>非洲</option><option>大洋洲</option>
+        </select>
+      </div>
+      <div class="field">
+        <label>主题</label>
+        <select name="theme">
+          <option value="">任意</option>
+          <option>文化</option><option>海岛</option><option>自然</option>
+          <option>美食</option><option>探险</option><option>浪漫</option>
+        </select>
+      </div>
+      <button class="btn" type="submit">搜索</button>
+    </form>
   </section>
 
-  <!-- -------- 数据统计 -------- -->
-  <section class="stats">
+  <!-- -------- marquee -------- -->
+  <div class="marquee">
+    <div class="marquee-track" data-marquee></div>
+  </div>
+
+  <!-- -------- intro + stats -------- -->
+  <section class="intro" id="intro">
     <div class="container">
-      <div class="stats-grid" data-reveal="scale">
-        <div class="stat">
-          <div class="stat-num"><span data-counter="128" data-duration="1600">0</span><small>+</small></div>
-          <div class="stat-label">精选目的地</div>
+      <div class="intro-grid">
+        <div class="intro-label" data-reveal="up">
+          <span class="num">№ 01</span>
+          ABOUT YUNYOU — 我们相信
         </div>
-        <div class="stat">
-          <div class="stat-num"><span data-counter="120000" data-duration="1800">0</span><small>+</small></div>
-          <div class="stat-label">已服务旅行者</div>
-        </div>
-        <div class="stat">
-          <div class="stat-num"><span data-counter="4.9" data-duration="1600" data-decimals="1">0</span><small>/5</small></div>
-          <div class="stat-label">平均用户评分</div>
-        </div>
-        <div class="stat">
-          <div class="stat-num"><span data-counter="36" data-duration="1600">0</span><small>国</small></div>
-          <div class="stat-label">覆盖的国家</div>
+        <div>
+          <h2 data-reveal="up">旅行不是 <em>打卡</em>，<br/>是跟一个陌生的城市，交换一段安静的时间。</h2>
+          <p class="intro-body" data-reveal="up" style="--reveal-delay:80ms">
+            云游是一本写在网页上的旅行杂志。我们的编辑团队常年行走于全球，亲自探访每一个目的地，写下它们真实的、有温度的一面。
+            我们不做清单式的推荐，而是为你讲一个完整的故事 — 关于光线、食物、气味，和那些在攻略里读不到的小事。
+          </p>
+          <div class="intro-stats" data-reveal="up" style="--reveal-delay:160ms">
+            <div>
+              <div class="stat-num"><span data-counter="128" data-duration="1800">0</span><small>个</small></div>
+              <div class="stat-label">精选目的地</div>
+            </div>
+            <div>
+              <div class="stat-num"><span data-counter="36" data-duration="1800">0</span><small>国</small></div>
+              <div class="stat-label">走过的国家</div>
+            </div>
+            <div>
+              <div class="stat-num"><span data-counter="4.9" data-duration="1800" data-decimals="1">0</span><small>/5</small></div>
+              <div class="stat-label">旅人平均评分</div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- -------- 主题分类 -------- -->
-  <section class="section" id="themes">
+  <!-- -------- 精选目的地：杂志风非对称网格 -------- -->
+  <section class="collection">
     <div class="container">
-      <div class="section-head" data-reveal="up">
-        <span class="eyebrow">Explore By Theme</span>
-        <h2>按心情挑一段旅程</h2>
-        <p>无论是想在古城里慢慢走，还是想去雪山里大口呼吸，我们都帮你准备好了。</p>
+      <div class="collection-head" data-reveal="up">
+        <div class="title-block">
+          <span class="kicker">№ 02 — SELECTED JOURNEYS</span>
+          <h2>本期封面 <em>目的地</em></h2>
+        </div>
+        <p class="meta-right">编辑部从 128 个目的地里挑出 6 个此刻最值得出发的地方，每一个都经过亲自走访与反复打磨。</p>
       </div>
-      <div class="themes-grid" data-themes></div>
+      <div class="editorial-grid" data-featured></div>
+      <div class="collection-foot" data-reveal="up">
+        <a href="destinations.html" class="btn btn--link">查看全部目的地 <span class="arrow">→</span></a>
+      </div>
     </div>
   </section>
 
-  <!-- -------- 精选目的地 -------- -->
-  <section class="section featured" id="featured">
+  <!-- -------- themes -------- -->
+  <section class="themes">
     <div class="container">
-      <div class="section-head" data-reveal="up">
-        <span class="eyebrow">Featured Destinations</span>
-        <h2>本周云游精选</h2>
-        <p>编辑团队走遍世界为你挑出的 6 个此刻最值得出发的地方。</p>
+      <div class="collection-head" data-reveal="up">
+        <div class="title-block">
+          <span class="kicker">№ 03 — BY MOOD</span>
+          <h2>按你现在的 <em>心情</em></h2>
+        </div>
+        <p class="meta-right">是想安静待着，还是想挑战一下？为你的下一次旅行，选一种叙事方式。</p>
       </div>
-      <div class="featured-grid" data-featured></div>
-      <div style="text-align:center;margin-top:40px" data-reveal="up">
-        <a href="destinations.html" class="btn btn--outline">查看全部目的地 →</a>
-      </div>
+      <div class="themes-rail" data-themes></div>
     </div>
   </section>
 
-  <!-- -------- 视差横幅 -------- -->
-  <section class="parallax" id="stories">
-    <div class="container" data-reveal="scale">
-      <span class="eyebrow" style="color:#ffd166">Stories In Motion</span>
-      <h2>把每一次出发，<br/>都拍成一部属于你的电影。</h2>
-      <p>从行程规划、当地向导到摄影建议，云游帮你把旅程的每个镜头都处理好。</p>
-      <a href="destinations.html" class="btn btn--primary">开始你的故事</a>
-    </div>
-  </section>
-
-  <!-- -------- 用户评价 -------- -->
-  <section class="section testimonials">
+  <!-- -------- 深色 interlude（打破纯白平铺） -------- -->
+  <section class="interlude">
     <div class="container">
-      <div class="section-head" data-reveal="up">
-        <span class="eyebrow">Voices From Travelers</span>
-        <h2>真实旅人，真诚反馈</h2>
-        <p>来自不同城市、不同职业的云游用户，分享他们最难忘的一段旅程。</p>
+      <div data-reveal="fade">
+        <div class="kicker">№ 04 — FIELD NOTES</div>
+        <h2>把每一次出发，都拍成一部 <em>属于你的</em> 电影。</h2>
+        <p>从行程规划、当地向导、摄影建议，到每一家我们亲自住过的小旅馆 — 云游编辑部把所有细节准备好，你只要背上背包就好。</p>
+        <div class="actions">
+          <a href="destinations.html" class="btn btn--primary" style="background:#f5f1ea;color:#1a1a1a;">开始你的故事 <span class="arrow">→</span></a>
+          <a href="planner.html" class="btn btn--ghost">规划一条路线</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- -------- 编辑手记 -------- -->
+  <section class="journal">
+    <div class="container">
+      <div class="collection-head" data-reveal="up">
+        <div class="title-block">
+          <span class="kicker">№ 05 — EDITOR'S JOURNAL</span>
+          <h2>编辑 <em>手记</em></h2>
+        </div>
+        <p class="meta-right">编辑部的旅行日记。那些没写进攻略里、却最想分享给你的瞬间。</p>
+      </div>
+      <div class="journal-list" data-journal></div>
+    </div>
+  </section>
+
+  <!-- -------- testimonials -------- -->
+  <section class="testimonials">
+    <div class="container">
+      <div class="collection-head" data-reveal="up">
+        <div class="title-block">
+          <span class="kicker">№ 06 — VOICES</span>
+          <h2>旅人的 <em>回声</em></h2>
+        </div>
+        <p class="meta-right">来自不同城市、不同职业的云游用户，分享他们最难忘的一段旅程。</p>
       </div>
       <div class="testimonial-grid" data-testimonials></div>
     </div>
   </section>
 
-  <!-- -------- 订阅 CTA -------- -->
-  <section class="cta-band" id="newsletter">
+  <!-- -------- subscribe -------- -->
+  <section class="subscribe" id="newsletter">
     <div class="container">
-      <div class="cta-wrap" data-reveal="up">
-        <div>
-          <h2>每周一封，为你挑好下一次出发</h2>
+      <div class="subscribe-wrap">
+        <div data-reveal="up">
+          <h2>每周一封，<br/>为你挑好下一次 <em>出发</em>。</h2>
           <p>目的地灵感、机票提醒与旅人专栏，直接送达你的收件箱。我们保证不发广告。</p>
         </div>
-        <form class="cta-form" data-newsletter>
-          <input type="email" required placeholder="你的邮箱地址" />
-          <button type="submit">立即订阅</button>
+        <form data-newsletter data-reveal="up" style="--reveal-delay:100ms">
+          <input type="email" required placeholder="your@email.com" />
+          <button type="submit">Subscribe <span class="arrow">→</span></button>
         </form>
       </div>
     </div>
   </section>
 
-  <!-- -------- 页脚 -------- -->
-  <footer class="site-footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <a class="brand" href="index.html" style="color:#fff">
-            <span class="brand-mark">✈</span>
-            <span>云游</span>
-          </a>
-          <p>发现下一段值得出发的旅程。我们挑选最好看的目的地，写最有温度的攻略。</p>
-          <div class="socials">
-            <a href="#" aria-label="微博">W</a>
-            <a href="#" aria-label="小红书">R</a>
-            <a href="#" aria-label="Instagram">Ig</a>
-            <a href="#" aria-label="YouTube">Yt</a>
-          </div>
-        </div>
-        <div class="footer-col">
-          <h4>产品</h4>
-          <ul>
-            <li><a href="destinations.html">目的地</a></li>
-            <li><a href="#themes">主题旅行</a></li>
-            <li><a href="#">路线规划器</a></li>
-            <li><a href="#">云游 App</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h4>资源</h4>
-          <ul>
-            <li><a href="#stories">旅行故事</a></li>
-            <li><a href="#">摄影指南</a></li>
-            <li><a href="#">签证与出行</a></li>
-            <li><a href="#">帮助中心</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h4>公司</h4>
-          <ul>
-            <li><a href="#">关于我们</a></li>
-            <li><a href="#">加入我们</a></li>
-            <li><a href="#">合作伙伴</a></li>
-            <li><a href="#">联系方式</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <span>© 2026 云游 Yunyou · 所有图片版权归原作者所有</span>
-        <span>中文 · 简体</span>
-      </div>
-    </div>
-  </footer>
+  <div data-chrome="footer"></div>
 
   <script src="assets/data/destinations.js"></script>
+  <script src="assets/js/features.js"></script>
   <script src="assets/js/ui.js"></script>
   <script src="assets/js/home.js"></script>
 </body>

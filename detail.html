@@ -4,71 +4,101 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>目的地详情 · 云游</title>
-  <meta name="description" content="云游目的地详情页，查看图集、行程、亮点与预订信息。" />
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='74' font-size='80'%3E%E2%9C%88%EF%B8%8F%3C/text%3E%3C/svg%3E" />
+  <meta name="description" content="云游目的地详情页，查看图集、行程、亮点、实时天气与预订信息。" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='74' font-size='80' font-family='serif' font-style='italic' fill='%23b6532b'%3EY%3C/text%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..500,30..100,0..1;1,9..144,300..500,30..100,0..1&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/main.css" />
   <link rel="stylesheet" href="assets/css/home.css" />
   <link rel="stylesheet" href="assets/css/detail.css" />
 </head>
 <body>
-  <header class="site-header is-transparent" data-header-mode="auto">
-    <div class="container">
-      <a class="brand" href="index.html">
-        <span class="brand-mark">✈</span>
-        <span>云游</span>
-      </a>
-      <nav class="nav">
-        <a href="index.html">首页</a>
-        <a href="destinations.html" class="is-active">目的地</a>
-        <a href="index.html#themes">主题</a>
-        <a href="index.html#stories">故事</a>
-        <a href="index.html#newsletter">订阅</a>
-      </nav>
-      <a href="#booking" class="btn btn--primary header-cta">立即预订</a>
-      <button class="nav-toggle" aria-label="菜单"><span></span></button>
-    </div>
-  </header>
+  <div data-chrome="header"></div>
 
   <section class="detail-hero" data-hero>
     <div class="container">
       <div class="crumbs">
-        <a href="index.html">首页</a> /
-        <a href="destinations.html">目的地</a> /
+        <a href="index.html">HOME</a><span class="sep">/</span>
+        <a href="destinations.html">DESTINATIONS</a><span class="sep">/</span>
         <span data-crumb-name>—</span>
       </div>
-      <h1 data-title>—</h1>
-      <p class="tagline" data-tagline>—</p>
-      <div class="meta" data-meta></div>
+      <div class="detail-hero-main">
+        <div>
+          <div class="detail-hero-eyebrow" data-eyebrow>—</div>
+          <h1 data-title>—</h1>
+          <p class="tagline" data-tagline>—</p>
+          <div class="meta-row" data-meta></div>
+        </div>
+        <div class="detail-hero-side">
+          <button class="fav-btn" data-hero-fav aria-label="加入心愿单">♡</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- -------- 实时数据面板 -------- -->
+  <section class="live-panel">
+    <div class="container">
+      <div class="live-grid">
+        <div class="live-cell">
+          <span class="k">当地时间</span>
+          <span class="v" data-local-time>—:—</span>
+          <span class="sub" data-local-date></span>
+        </div>
+        <div class="live-cell">
+          <span class="k">实时天气</span>
+          <span data-weather><span class="v">— <span class="unit">°C</span></span></span>
+          <span class="sub" data-weather-sub>加载中…</span>
+          <div class="wx-days" data-weather-days></div>
+        </div>
+        <div class="live-cell flag" data-country-flag>
+          <span class="v">—</span>
+        </div>
+        <div class="live-cell">
+          <span class="k">本地货币</span>
+          <span data-country-currency><span class="v">—</span></span>
+          <span class="sub" data-country-currency-sub></span>
+        </div>
+      </div>
     </div>
   </section>
 
   <section class="container detail-body">
     <div class="detail-main">
       <section data-reveal="up">
-        <h2>目的地印象</h2>
-        <p data-description>—</p>
-        <div class="gallery" data-gallery style="margin-top:24px"></div>
+        <div class="eyebrow">№ 01 — IMPRESSIONS</div>
+        <h2>目的地 <em>印象</em></h2>
+        <p class="lede" data-description>—</p>
+        <div class="gallery" data-gallery></div>
       </section>
 
       <section data-reveal="up">
-        <h2>必体验亮点</h2>
+        <div class="eyebrow">№ 02 — HIGHLIGHTS</div>
+        <h2>必体验 <em>亮点</em></h2>
         <ul class="highlights-list" data-highlights></ul>
       </section>
 
       <section data-reveal="up">
-        <h2>推荐行程</h2>
+        <div class="eyebrow">№ 03 — ITINERARY</div>
+        <h2>推荐 <em>行程</em></h2>
         <div class="itinerary" data-itinerary></div>
       </section>
+
+      <blockquote class="pullquote" data-reveal="up">
+        好的旅行不是收集照片，而是把一个陌生的地方，变成你的家的延伸。
+      </blockquote>
     </div>
 
     <aside class="booking-card" data-booking id="booking">
+      <div class="eyebrow">RESERVE YOUR TRIP</div>
       <div class="price-row">
-        <span class="price" data-price>¥0</span>
+        <span class="price" data-price data-price-cny="0">¥0</span>
         <span class="unit">/ 人 起</span>
       </div>
       <div class="rating-row">
-        <span class="score">★ <span data-rating>0</span></span>
-        <span>· <span data-reviews>0</span> 条真实评价</span>
+        <span class="score">★ <span data-rating>—</span></span>
+        <span>· <span data-reviews>—</span> 条真实评价</span>
       </div>
       <form>
         <div class="form-row">
@@ -97,45 +127,31 @@
             <option>亲子同行</option>
           </select>
         </div>
-        <button class="btn btn--primary" type="submit">锁定这段旅程</button>
-        <div class="note">预订后 24 小时内可无理由取消</div>
+        <button class="btn btn--primary" type="submit">锁定这段旅程 <span class="arrow">→</span></button>
+        <div class="secondary-actions">
+          <button type="button" data-add-wish>♡ 收藏</button>
+          <button type="button" data-add-plan>＋ 加入行程</button>
+        </div>
+        <div class="note">预订后 24 小时内可无理由取消 · 实时汇率换算</div>
       </form>
     </aside>
   </section>
 
-  <section class="section related">
+  <section class="related">
     <div class="container">
-      <div class="section-head" data-reveal="up">
-        <span class="eyebrow">You May Also Like</span>
-        <h2>你可能还会喜欢</h2>
+      <div class="related-head" data-reveal="up">
+        <h2>你可能 <em>还会</em> 喜欢</h2>
+        <a href="destinations.html" class="btn btn--link">查看全部 <span class="arrow">→</span></a>
       </div>
-      <div class="related-grid" data-related></div>
+      <div class="related-grid editorial-grid" data-related></div>
     </div>
   </section>
 
-  <footer class="site-footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <a class="brand" href="index.html" style="color:#fff">
-            <span class="brand-mark">✈</span>
-            <span>云游</span>
-          </a>
-          <p>发现下一段值得出发的旅程。</p>
-          <div class="socials"><a href="#">W</a><a href="#">R</a><a href="#">Ig</a><a href="#">Yt</a></div>
-        </div>
-        <div class="footer-col"><h4>产品</h4><ul><li><a href="destinations.html">目的地</a></li><li><a href="index.html#themes">主题旅行</a></li></ul></div>
-        <div class="footer-col"><h4>资源</h4><ul><li><a href="index.html#stories">旅行故事</a></li><li><a href="#">帮助中心</a></li></ul></div>
-        <div class="footer-col"><h4>公司</h4><ul><li><a href="#">关于我们</a></li><li><a href="#">联系方式</a></li></ul></div>
-      </div>
-      <div class="footer-bottom">
-        <span>© 2026 云游 Yunyou · 所有图片版权归原作者所有</span>
-        <span>中文 · 简体</span>
-      </div>
-    </div>
-  </footer>
+  <div data-chrome="footer"></div>
 
   <script src="assets/data/destinations.js"></script>
+  <script src="assets/js/features.js"></script>
+  <script src="assets/js/live.js"></script>
   <script src="assets/js/ui.js"></script>
   <script src="assets/js/detail.js"></script>
 </body>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>行程规划器 · 云游</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='74' font-size='80' font-family='serif' font-style='italic' fill='%23b6532b'%3EY%3C/text%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..500,30..100,0..1;1,9..144,300..500,30..100,0..1&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <link rel="stylesheet" href="assets/css/home.css" />
+  <link rel="stylesheet" href="assets/css/tools.css" />
+</head>
+<body>
+  <div data-chrome="header"></div>
+
+  <section class="tool-page">
+    <div class="container">
+      <div class="tool-head">
+        <div>
+          <div class="crumbs">
+            <a href="index.html">HOME</a><span class="sep">/</span><span>PLANNER</span>
+          </div>
+          <h1>行程 <em>规划器</em>。</h1>
+        </div>
+        <div class="summary">
+          把目的地一个一个加进来，拖拽调整顺序，修改停留天数，云游帮你实时计算整段旅程的费用（支持多币种）。
+          <div style="margin-top:20px;display:flex;gap:12px;">
+            <a class="btn btn--outline" href="destinations.html">浏览目的地</a>
+            <button class="btn btn--link" data-plan-clear>清空行程</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="planner-grid" data-plan-body style="display:none">
+        <div class="plan-list" data-plan-list></div>
+
+        <aside class="plan-summary">
+          <div class="sum-sub">SUMMARY · <span data-plan-head-count>0</span> STOPS</div>
+          <h3>预算 <em>概览</em></h3>
+          <div class="sum-row">
+            <span class="l">目的地数量</span>
+            <span class="v" data-plan-destinations>0</span>
+          </div>
+          <div class="sum-row">
+            <span class="l">总行程时长</span>
+            <span class="v" data-plan-days>0 天</span>
+          </div>
+          <div class="sum-row">
+            <span class="l">小计</span>
+            <span class="v" data-plan-subtotal>—</span>
+          </div>
+          <div class="sum-row">
+            <span class="l">预订服务费 (8%)</span>
+            <span class="v" data-plan-fee>—</span>
+          </div>
+          <div class="sum-total">
+            <span class="l">TOTAL</span>
+            <span class="v" data-plan-total>—</span>
+          </div>
+          <div class="sum-actions">
+            <button class="btn btn--primary" data-plan-export>导出行程 <span class="arrow">↓</span></button>
+            <a class="btn btn--outline" href="destinations.html">继续添加目的地</a>
+          </div>
+        </aside>
+      </div>
+
+      <div class="tool-empty" data-plan-empty style="display:block">
+        <h3>还没有行程</h3>
+        <p>去目的地详情页，点「＋ 加入行程」把第一站加进来。</p>
+        <a class="btn btn--primary" href="destinations.html">开始规划 <span class="arrow">→</span></a>
+      </div>
+    </div>
+  </section>
+
+  <div data-chrome="footer"></div>
+
+  <script src="assets/data/destinations.js"></script>
+  <script src="assets/js/features.js"></script>
+  <script src="assets/js/ui.js"></script>
+  <script src="assets/js/planner.js"></script>
+</body>
+</html>

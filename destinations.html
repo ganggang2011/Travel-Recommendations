@@ -5,101 +5,60 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>目的地 · 云游</title>
   <meta name="description" content="浏览云游精选的全球目的地，按区域、主题、价格筛选，挑出最适合你的下一次旅程。" />
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='74' font-size='80'%3E%E2%9C%88%EF%B8%8F%3C/text%3E%3C/svg%3E" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='74' font-size='80' font-family='serif' font-style='italic' fill='%23b6532b'%3EY%3C/text%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..500,30..100,0..1;1,9..144,300..500,30..100,0..1&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/main.css" />
   <link rel="stylesheet" href="assets/css/home.css" />
   <link rel="stylesheet" href="assets/css/list.css" />
 </head>
 <body>
-  <header class="site-header is-solid" data-header-mode="solid">
-    <div class="container">
-      <a class="brand" href="index.html">
-        <span class="brand-mark">✈</span>
-        <span>云游</span>
-      </a>
-      <nav class="nav">
-        <a href="index.html">首页</a>
-        <a href="destinations.html" class="is-active">目的地</a>
-        <a href="index.html#themes">主题</a>
-        <a href="index.html#stories">故事</a>
-        <a href="index.html#newsletter">订阅</a>
-      </nav>
-      <a href="#dest-grid" class="btn btn--primary header-cta">查看列表</a>
-      <button class="nav-toggle" aria-label="菜单"><span></span></button>
-    </div>
-  </header>
+  <div data-chrome="header"></div>
 
   <section class="page-hero">
     <div class="container">
-      <div class="crumbs" data-reveal="up">
-        <a href="index.html">首页</a>
-        <span>/</span>
-        <span>目的地</span>
+      <div class="crumbs" data-reveal="fade">
+        <a href="index.html">HOME</a><span class="sep">/</span><span>DESTINATIONS</span>
       </div>
-      <h1 data-reveal="up">全球精选目的地</h1>
+      <h1 data-reveal="up">全球 <em>精选</em><br/>目的地。</h1>
       <p class="lead" data-reveal="up" style="--reveal-delay:100ms">按你的心情选一段旅程。我们从 128 个目的地里挑出最值得出发的，再写成你读得下去的攻略。</p>
     </div>
   </section>
 
-  <section class="container" id="dest-grid">
-    <div class="filters" data-reveal="up">
-      <label class="search">
-        <span aria-hidden="true">🔍</span>
-        <input type="search" placeholder="搜索城市、国家或关键词…" data-filter-search />
-      </label>
-      <select data-filter-region aria-label="区域">
-        <option value="">全部区域</option>
-        <option>东亚</option>
-        <option>东南亚</option>
-        <option>欧洲</option>
-        <option>北美</option>
-        <option>非洲</option>
-        <option>大洋洲</option>
-      </select>
-      <select data-filter-sort aria-label="排序">
-        <option value="recommend">推荐排序</option>
-        <option value="price-asc">价格从低到高</option>
-        <option value="price-desc">价格从高到低</option>
-        <option value="rating">评分最高</option>
-        <option value="reviews">评价最多</option>
-      </select>
+  <section class="toolbar">
+    <div class="container">
+      <div class="toolbar-row">
+        <label class="search" aria-label="搜索">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+          <input type="search" placeholder="搜索城市、国家或关键词…" data-filter-search />
+        </label>
+        <select data-filter-region aria-label="区域">
+          <option value="">全部区域</option>
+          <option>东亚</option><option>东南亚</option><option>欧洲</option>
+          <option>北美</option><option>非洲</option><option>大洋洲</option>
+        </select>
+        <select data-filter-sort aria-label="排序">
+          <option value="recommend">推荐排序</option>
+          <option value="price-asc">价格 · 从低到高</option>
+          <option value="price-desc">价格 · 从高到低</option>
+          <option value="rating">评分最高</option>
+          <option value="reviews">评价最多</option>
+        </select>
+      </div>
+      <div class="filter-chips" data-filter-themes></div>
     </div>
+  </section>
 
-    <div class="filter-chips" data-filter-themes></div>
-
+  <section class="container">
     <div class="result-meta" data-result-meta></div>
-
     <div class="dest-grid" data-dest-grid></div>
   </section>
 
-  <footer class="site-footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <a class="brand" href="index.html" style="color:#fff">
-            <span class="brand-mark">✈</span>
-            <span>云游</span>
-          </a>
-          <p>发现下一段值得出发的旅程。我们挑选最好看的目的地，写最有温度的攻略。</p>
-          <div class="socials">
-            <a href="#">W</a>
-            <a href="#">R</a>
-            <a href="#">Ig</a>
-            <a href="#">Yt</a>
-          </div>
-        </div>
-        <div class="footer-col"><h4>产品</h4><ul><li><a href="destinations.html">目的地</a></li><li><a href="index.html#themes">主题旅行</a></li><li><a href="#">路线规划器</a></li></ul></div>
-        <div class="footer-col"><h4>资源</h4><ul><li><a href="index.html#stories">旅行故事</a></li><li><a href="#">摄影指南</a></li><li><a href="#">帮助中心</a></li></ul></div>
-        <div class="footer-col"><h4>公司</h4><ul><li><a href="#">关于我们</a></li><li><a href="#">加入我们</a></li><li><a href="#">联系方式</a></li></ul></div>
-      </div>
-      <div class="footer-bottom">
-        <span>© 2026 云游 Yunyou · 所有图片版权归原作者所有</span>
-        <span>中文 · 简体</span>
-      </div>
-    </div>
-  </footer>
+  <div data-chrome="footer"></div>
 
   <script src="assets/data/destinations.js"></script>
+  <script src="assets/js/features.js"></script>
   <script src="assets/js/ui.js"></script>
   <script src="assets/js/list.js"></script>
 </body>
