@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>目的地详情 · 云游</title>
+  <meta name="description" content="云游目的地详情页，查看图集、行程、亮点、实时天气与预订信息。" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='74' font-size='80' font-family='serif' font-style='italic' fill='%23b6532b'%3EY%3C/text%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..500,30..100,0..1;1,9..144,300..500,30..100,0..1&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <link rel="stylesheet" href="assets/css/home.css" />
+  <link rel="stylesheet" href="assets/css/detail.css" />
+</head>
+<body>
+  <div data-chrome="header"></div>
+
+  <section class="detail-hero" data-hero>
+    <div class="container">
+      <div class="crumbs">
+        <a href="index.html">HOME</a><span class="sep">/</span>
+        <a href="destinations.html">DESTINATIONS</a><span class="sep">/</span>
+        <span data-crumb-name>—</span>
+      </div>
+      <div class="detail-hero-main">
+        <div>
+          <div class="detail-hero-eyebrow" data-eyebrow>—</div>
+          <h1 data-title>—</h1>
+          <p class="tagline" data-tagline>—</p>
+          <div class="meta-row" data-meta></div>
+        </div>
+        <div class="detail-hero-side">
+          <button class="fav-btn" data-hero-fav aria-label="加入心愿单">♡</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- -------- 实时数据面板 -------- -->
+  <section class="live-panel">
+    <div class="container">
+      <div class="live-grid">
+        <div class="live-cell">
+          <span class="k">当地时间</span>
+          <span class="v" data-local-time>—:—</span>
+          <span class="sub" data-local-date></span>
+        </div>
+        <div class="live-cell">
+          <span class="k">实时天气</span>
+          <span data-weather><span class="v">— <span class="unit">°C</span></span></span>
+          <span class="sub" data-weather-sub>加载中…</span>
+          <div class="wx-days" data-weather-days></div>
+        </div>
+        <div class="live-cell flag" data-country-flag>
+          <span class="v">—</span>
+        </div>
+        <div class="live-cell">
+          <span class="k">本地货币</span>
+          <span data-country-currency><span class="v">—</span></span>
+          <span class="sub" data-country-currency-sub></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="container detail-body">
+    <div class="detail-main">
+      <section data-reveal="up">
+        <div class="eyebrow">№ 01 — IMPRESSIONS</div>
+        <h2>目的地 <em>印象</em></h2>
+        <p class="lede" data-description>—</p>
+        <div class="gallery" data-gallery></div>
+      </section>
+
+      <section data-reveal="up">
+        <div class="eyebrow">№ 02 — HIGHLIGHTS</div>
+        <h2>必体验 <em>亮点</em></h2>
+        <ul class="highlights-list" data-highlights></ul>
+      </section>
+
+      <section data-reveal="up">
+        <div class="eyebrow">№ 03 — ITINERARY</div>
+        <h2>推荐 <em>行程</em></h2>
+        <div class="itinerary" data-itinerary></div>
+      </section>
+
+      <blockquote class="pullquote" data-reveal="up">
+        好的旅行不是收集照片，而是把一个陌生的地方，变成你的家的延伸。
+      </blockquote>
+    </div>
+
+    <aside class="booking-card" data-booking id="booking">
+      <div class="eyebrow">RESERVE YOUR TRIP</div>
+      <div class="price-row">
+        <span class="price" data-price data-price-cny="0">¥0</span>
+        <span class="unit">/ 人 起</span>
+      </div>
+      <div class="rating-row">
+        <span class="score">★ <span data-rating>—</span></span>
+        <span>· <span data-reviews>—</span> 条真实评价</span>
+      </div>
+      <form>
+        <div class="form-row">
+          <div class="form-field">
+            <label>出发日期</label>
+            <input type="date" required />
+          </div>
+          <div class="form-field">
+            <label>人数</label>
+            <select>
+              <option>1 人</option>
+              <option selected>2 人</option>
+              <option>3 人</option>
+              <option>4 人</option>
+              <option>5+ 人</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-field">
+          <label>偏好风格</label>
+          <select>
+            <option>标准行程</option>
+            <option>深度文化</option>
+            <option>户外探险</option>
+            <option>轻奢度假</option>
+            <option>亲子同行</option>
+          </select>
+        </div>
+        <button class="btn btn--primary" type="submit">锁定这段旅程 <span class="arrow">→</span></button>
+        <div class="secondary-actions">
+          <button type="button" data-add-wish>♡ 收藏</button>
+          <button type="button" data-add-plan>＋ 加入行程</button>
+        </div>
+        <div class="note">预订后 24 小时内可无理由取消 · 实时汇率换算</div>
+      </form>
+    </aside>
+  </section>
+
+  <section class="related">
+    <div class="container">
+      <div class="related-head" data-reveal="up">
+        <h2>你可能 <em>还会</em> 喜欢</h2>
+        <a href="destinations.html" class="btn btn--link">查看全部 <span class="arrow">→</span></a>
+      </div>
+      <div class="related-grid editorial-grid" data-related></div>
+    </div>
+  </section>
+
+  <div data-chrome="footer"></div>
+
+  <script src="assets/data/destinations.js"></script>
+  <script src="assets/js/features.js"></script>
+  <script src="assets/js/live.js"></script>
+  <script src="assets/js/ui.js"></script>
+  <script src="assets/js/detail.js"></script>
+</body>
+</html>
