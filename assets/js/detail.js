@@ -113,17 +113,6 @@
     renderItinerary(d);
     renderBooking(d);
     renderRelated(d);
-    // 渲染后重新 observe 动画节点
-    if ("IntersectionObserver" in window) {
-      const io = new IntersectionObserver((entries) => {
-        entries.forEach(e => {
-          if (e.isIntersecting) {
-            e.target.classList.add("is-visible");
-            io.unobserve(e.target);
-          }
-        });
-      }, { threshold: 0.1 });
-      document.querySelectorAll("[data-reveal]:not(.is-visible)").forEach(n => io.observe(n));
-    }
+    if (window.observeReveal) window.observeReveal();
   });
 })();

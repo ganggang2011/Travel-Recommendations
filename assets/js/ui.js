@@ -23,24 +23,33 @@
     window.addEventListener("scroll", apply, { passive: true });
   }
 
-  // 滚动进入视口触发动画
-  function initReveal() {
-    const nodes = document.querySelectorAll("[data-reveal]");
+  // 滚动进入视口触发动画；复用单一 IO，并暴露 observe 方法
+  let revealIO = null;
+  function ensureRevealIO() {
+    if (revealIO || !("IntersectionObserver" in window)) return revealIO;
+    revealIO = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add("is-visible");
+          revealIO.unobserve(e.target);
+        }
+      });
+    }, { rootMargin: "0px 0px -8% 0px", threshold: 0.1 });
+    return revealIO;
+  }
+  function observeReveal(scope) {
+    const root = scope || document;
+    const nodes = root.querySelectorAll("[data-reveal]:not(.is-visible)");
     if (!nodes.length) return;
     if (!("IntersectionObserver" in window)) {
       nodes.forEach(n => n.classList.add("is-visible"));
       return;
     }
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach(e => {
-        if (e.isIntersecting) {
-          e.target.classList.add("is-visible");
-          io.unobserve(e.target);
-        }
-      });
-    }, { rootMargin: "0px 0px -8% 0px", threshold: 0.1 });
+    const io = ensureRevealIO();
     nodes.forEach(n => io.observe(n));
   }
+  window.observeReveal = observeReveal;
+  function initReveal() { observeReveal(); }
 
   // 数字计数器动画
   function initCounters() {

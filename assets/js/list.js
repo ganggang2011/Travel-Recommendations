@@ -72,18 +72,7 @@
       return;
     }
     grid.innerHTML = items.map((d, i) => window.renderDestinationCard(d, i)).join("");
-    // 手动触发 reveal（新 DOM 节点需要重新 observe）
-    if ("IntersectionObserver" in window) {
-      const io = new IntersectionObserver((entries) => {
-        entries.forEach(e => {
-          if (e.isIntersecting) {
-            e.target.classList.add("is-visible");
-            io.unobserve(e.target);
-          }
-        });
-      }, { threshold: 0.1 });
-      grid.querySelectorAll("[data-reveal]").forEach(n => io.observe(n));
-    }
+    if (window.observeReveal) window.observeReveal(grid);
   }
 
   function initControls() {

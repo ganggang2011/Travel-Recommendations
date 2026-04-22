@@ -128,5 +128,7 @@
     initFeatured();
     initTestimonials();
     initSearchForms();
+    // 动态渲染的卡片需要重新注册到 reveal 观察器
+    if (window.observeReveal) window.observeReveal();
   });
 })();
