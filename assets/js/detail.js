@@ -31,9 +31,12 @@
   function renderGallery(d) {
     const wrap = document.querySelector("[data-gallery]");
     if (!wrap) return;
+    // 任何加载失败的图都回退到主 Hero 图
+    const fallback = d.heroImage.replace(/&w=\d+/, "&w=1200");
     wrap.innerHTML = d.gallery.map((src, i) => `
       <figure data-reveal="${i === 0 ? "scale" : "up"}" style="--reveal-delay:${i * 80}ms">
-        <img src="${src}" alt="${d.name} 图集 ${i + 1}" loading="lazy" />
+        <img src="${src}" alt="${d.name} 图集 ${i + 1}" loading="lazy"
+             onerror="this.onerror=null;this.src='${fallback}'" />
       </figure>
     `).join("");
   }

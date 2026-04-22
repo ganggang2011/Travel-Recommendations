@@ -114,10 +114,12 @@ window.renderDestinationCard = function renderDestinationCard(d, index) {
   const priceTxt = `¥${d.priceFrom.toLocaleString("zh-CN")} 起`;
   const tagsHtml = d.themes.map(t => `<span class="chip">${t}</span>`).join("");
   const delay = typeof index === "number" ? (index * 80) : 0;
+  const fallbackImg = "https://images.unsplash.com/photo-1488646953014-85cb44e25828?auto=format&fit=crop&w=1200&q=80";
   return `
     <a class="dest-card" href="detail.html?id=${d.id}" data-reveal="up" style="--reveal-delay:${delay}ms">
       <div class="dest-card-media">
-        <img src="${d.heroImage}" alt="${d.name}" loading="lazy" />
+        <img src="${d.heroImage}" alt="${d.name}" loading="lazy"
+             onerror="this.onerror=null;this.src='${fallbackImg}'" />
         <span class="price-tag">${priceTxt}</span>
         <button class="fav" aria-label="收藏" onclick="event.preventDefault();event.stopPropagation();this.classList.toggle('is-on');this.innerHTML=this.classList.contains('is-on')?'&#10084;':'&#9825;'">&#9825;</button>
       </div>
