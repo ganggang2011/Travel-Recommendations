@@ -264,12 +264,12 @@ window.DESTINATIONS = [
     lat: 38.7223,
     lng: -9.1393,
     timezone: "Europe/Lisbon",
-    heroImage: "https://images.unsplash.com/photo-1588535265092-a642a3fcfa5c?auto=format&fit=crop&w=1600&q=80",
+    heroImage: "https://images.unsplash.com/photo-1744031968591-d5c75e842e2d?auto=format&fit=crop&w=1600&q=80",
     gallery: [
-      "https://images.unsplash.com/photo-1513735429613-f4b73afe8b91?auto=format&fit=crop&w=1200&q=80",
       "https://images.unsplash.com/photo-1555881400-74d7acaacd8b?auto=format&fit=crop&w=1200&q=80",
       "https://images.unsplash.com/photo-1527631746610-bca00a040d60?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1569144157581-b65fe4f66e39?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1639515735979-073a88150028?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1744031968591-d5c75e842e2d?auto=format&fit=crop&w=1200&q=80"
     ],
     description: "坐上 28 路黄色电车穿过阿尔法玛老城，听一场 Fado 吟唱，再去贝伦区吃一枚热腾腾的葡式蛋挞。",
     highlights: [
